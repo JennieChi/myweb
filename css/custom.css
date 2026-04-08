@@ -1,0 +1,297 @@
+:root,
+[data-bs-theme=dark]{
+--bs-dark-rgb:255, 149, 202;
+}
+
+/* 連結Google雲端字體，提供用戶一致體驗UX */
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@300&display=swap');
+
+/* 利用根元素作為標籤選取器，改變整體頁面的文字大小 */
+html{font-size: 20px;}
+
+/* 統一每一個網頁的背景色 */
+body{font-family: "微軟正黑體", "Chiron GoRound TC", sans-serif;background: #FFECF5;}
+
+/* 個別指定網頁背景色 */
+/* .bg-color-red{background-color: #FFD2D2;} */
+
+/* 標題一級的文字大小 */
+h1{font-size: 2rem;}
+
+/* 標題二級的文字設定，選取器是標籤，影響整體 */
+h2{font-size: 1.8rem;font-weight: 800;color: rgb(191, 0, 96);}
+
+/* 選取器是類別，影響個別，需要手動套用 */
+.h2-custom-pink{font-size: 3rem;font-weight: 800;color: rgb(255, 0, 195);}
+
+/* 重要文字標註 */
+.text-pink{font-size: 1.1rem;font-weight: 600;color: rgb(221, 85, 153);}
+
+/* 駝峰式命名、與其他CSS衝突 */
+/* 與其他CSS衝突，無法套用文字大小時，可強制優先套用目前樣式 */
+.iconsTitle{
+    font-size:2rem !important;
+    color: rgb(191, 0, 96);
+    vertical-align: text-bottom;
+}
+
+/* 善巧工具頁面的標題四級文字大小 */
+.h4-Fontsize{font-size: 1.2rem;font-weight: 900;color: #ee6688;}
+
+/* 項目清單符號 */
+.list-symbol{list-style-type: circle;}
+
+/* 善巧工具頁面ChatGPT的搭配圖式設計 */
+/* 移除預設符號 */
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* li 基本設定 */
+.custom-list li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+/* 項目符號（紫色） */
+ul.custom-list li::before {
+  content: "⚛";
+  color: #990099; /* 紫色（安全色） */
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+
+/* ：前文字（紫色，與符號一致） */
+.custom-list .term {
+  color: #990099;
+  font-weight: bold;
+}
+
+/* ：後文字（粉色） */
+.custom-list .desc {
+  color: #ee4499;
+}
+
+/* 編號符號 */
+ol.custom-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: item;
+}
+
+/* 編號符號自訂數字樣式 */
+ol.custom-list li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 26px; /* 控制距離 */
+}
+
+ol.custom-list li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  color: #990099;
+  font-weight: bold;
+}
+
+/* 項目清單色彩，連帶影響清單內的文字色彩 */
+/* li{color: #990099;} */
+
+/* 單獨針對項目/編號清單的符號色彩，優化前 
+ul li::marker{color: #990099;}
+
+ol li::marker{color: #990099;}*/
+
+/* 單獨針對項目/編號清單的符號色彩，優化後方式一 
+ul li::marker, ol li::marker{color: #990099;}*/
+
+/* 單獨針對項目/編號清單的符號色彩，優化後方式二 */
+li::marker{color: #990099;}
+
+/* ChatGPT：國平老師旅遊頁面範例使用的不同等級文字色彩 */
+.text-muted {
+  color: #666666; /* 灰色，表示中性、次要、輕微的資訊 */
+}
+
+.text-warning {
+  color: #cccc00; /* 黃色（安全色），表示提醒、注意、警示 */
+}
+
+.text-accent {
+  color: #ff9900; /* 橙色，表示強調、注意、行動提示 */
+}
+
+.text-danger {
+  color: #cc0000; /* 紅色，表示危險、錯誤 */
+}
+
+/* ChatGPT：善巧工具頁面使用的馬卡龍色系文字色彩 */
+.text-soft {
+  color: #ff99cc; /* 溫柔、關懷（粉紅） */
+}
+
+.text-warm {
+  color: #ffcc99; /* 溫暖、親和（粉橘） */
+}
+
+.text-healing {
+  color: #cc99cc; /* 靈性、療癒（粉紫） */
+}
+
+.text-calm {
+  color: #99ccff; /* 清新、平靜（粉藍） */
+}
+
+.text-spiritual {
+  color: #990099; /* 靈性、能量、轉化 */
+}
+
+/* ChatGPT：莫蘭迪(Morandi)色系文字色彩（柔和、低飽和） */
+.text-m-soft {
+  color: #cc9999; /* 柔和關懷（粉） */
+}
+
+.text-m-muted-danger {
+  color: #cc6666; /* 內斂情感（紅） */
+}
+
+.text-m-healing {
+  color: #9999cc; /* 靜謐靈性（紫） */
+}
+
+.text-m-earth {
+  color: #996666; /* 穩定大地（咖） */
+}
+
+.text-m-warm {
+  color: #cc9966; /* 溫潤親和（橘） */
+}
+
+.text-m-light {
+  color: #cccc99; /* 柔光希望（黃） */
+}
+
+.text-m-balance {
+  color: #99cc99; /* 自然平衡（綠） */
+}
+
+.text-m-calm {
+  color: #9999cc; /* 沉靜安心（藍） */
+}
+
+/* ChatGPT：美拉德(Maillard)色系（溫暖、濃郁） */
+.text-ma-sweet {
+  color: #ff9999; /* 甜感柔粉（粉） */
+}
+
+.text-ma-rich-danger {
+  color: #cc3333; /* 焦糖紅（紅） */
+}
+
+.text-ma-depth {
+  color: #993366; /* 深層能量（紫） */
+}
+
+.text-ma-cozy {
+  color: #663300; /* 咖啡核心（咖） */
+}
+
+.text-ma-caramel {
+  color: #ff9933; /* 焦糖橘（橘） */
+}
+
+.text-ma-honey {
+  color: #ffcc33; /* 蜂蜜光（黃） */
+}
+
+.text-ma-organic {
+  color: #669933; /* 草本暖綠（綠） */
+}
+
+.text-ma-night {
+  color: #336699; /* 深焙藍（藍） */
+}
+
+/* 保留card類別，新增樣式拿掉邊框 */
+.card-no-border{
+    border: none;
+    background: none;
+}
+
+/* 字體樣式粗細，100-900 */
+/* 類別：個別套用 */
+.text-boldest{
+  font-size: 900;
+}
+
+/* 複合：整體套用 */
+#notes h5{
+  font-weight: 900;
+}
+
+/* 相關連結頁面，圖片裁切 */
+.imgCut{
+  width: 100%; /* 原圖尺寸，父層寬度 */
+  height: 500px;
+  clip:rect(0px,0px,290px,0px);
+  object-fit: cover;
+}
+
+/* ChatGPT：圖片進階優化-每張圖比例一致、不會變形、視覺更高級 */
+.img-cover { 
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* ChatGPT：圖片進階優化-滑過有微動態 */
+.img-cover:hover {
+  transform: scale(1.05);
+}
+
+/* ChatGPT：段落中某些文字像標題一樣凸顯 */
+.text-highlight {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #bb8866; /* 莫蘭迪風 */
+  border-left: 4px solid #bb8866;
+  padding-left: 10px;
+  margin: 12px 0;
+  display: block;
+}
+
+/* ChatGPT：自訂按鈕樣式-莫蘭迪、美拉德風 */
+.btn-brand {
+  background-color: #cc9999;
+  color: #fff;
+  border-radius: 999px; /* 膠囊按鈕 */
+  padding: 10px 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+ }
+
+/* 滑鼠滑動效果 */
+.btn-brand:hover {
+  background-color: #dd7777;  /* hover 深一點 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ChatGPT：療癒生活頁面卡片等高 */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ChatGPT：如果有按鈕，未來會用到-內容撐開、按鈕可以貼底（高級排版） */
+.card-body {
+  flex-grow: 1;
+}
+
+
